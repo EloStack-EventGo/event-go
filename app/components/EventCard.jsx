@@ -1,24 +1,20 @@
-import React from 'react'
-import { FaRegHeart } from 'react-icons/fa'
-import Image from 'next/image'
+import React from "react";
+import { FaRegHeart } from "react-icons/fa";
+import Image from "next/image";
+import FavoriteButton from "./FavoriteButton";
 
 const EventCard = ({ source }) => {
   return (
-    <div className="relative w-[420px] h-80 rounded-2xl border-4 bg-white">
-      <div className="h-10 w-10">
-        <FaRegHeart
-          className="z-10 absolute top-6 right-3 transform -translate-y-1/2"
-          size={30}
-        />
-      </div>
+    <div className="relative lg:w-[320px] lg:h-64 2xl:w-[420px] 2xl:h-80 rounded-2xl border-4 bg-white">
+      <FavoriteButton />
       <Image
-        className="object-cover rounded-xl"
+        className="object-cover rounded-xl non-selectable"
         src={source}
         fill="true"
         alt="Picture of the author"
       />
     </div>
-  )
-}
+  );
+};
 
-export default EventCard
+export default EventCard;

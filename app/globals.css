@@ -32,3 +32,11 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Class to prevent blue highlighting on double click of FavoriteButton */
+.non-selectable {
+  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* WebKit browsers */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
