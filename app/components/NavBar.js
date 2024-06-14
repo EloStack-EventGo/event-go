@@ -1,4 +1,5 @@
 import { FaHeart, FaUser } from "react-icons/fa";
+import "../globals.css";
 
 const NavBar = () => {
   return (

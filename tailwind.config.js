@@ -6,11 +6,14 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      offwhite: "#D9D9D9",
-      black: "#000000",
+    extend: {
+      colors: {
+        offwhite: "#D9D9D9",
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
     },
-
     extend: {
       backgroundImage: {
         logo: "url('../public/logo.png')",
