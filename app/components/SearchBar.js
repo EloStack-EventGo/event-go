@@ -11,7 +11,7 @@ const SearchBar = () => {
           style={{ color: 'black' }}
         />
         <FaSearch
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2"
           style={{ color: 'black' }}
           size={23}
         />
