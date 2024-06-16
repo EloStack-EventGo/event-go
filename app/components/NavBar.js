@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { FaHeart, FaUser } from 'react-icons/fa'
 import '../globals.css'
+import ProfileIcon from './ProfileIcon'
 
 const NavBar = () => {
   return (
@@ -40,7 +41,7 @@ const NavBar = () => {
       <div className="flex flex-row gap-10 pr-5 items-center">
         <p className="font-black text-xl pt-1"> SELL </p>
         <FaHeart size={25} />
-        <FaUser size={25} />
+        <ProfileIcon />
       </div>
     </div>
   )

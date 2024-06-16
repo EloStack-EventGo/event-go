@@ -40,3 +40,16 @@ body {
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
+
+/* Class that handles triangle tooltip in the AuthModal component */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: -6px; /* Position the arrow above the modal */
+  right: 10px; /* Adjust this value to move the arrow left/right */
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid white;
+}
