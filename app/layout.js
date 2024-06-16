@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* SHOULD BE PRESENT IN MOST PAGES */}
         <NavBar />
         {children}
       </body>
