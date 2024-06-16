@@ -1,6 +1,7 @@
-import Link from "next/link";
-import { FaHeart, FaUser, FaCalendar, FaCalendarPlus } from "react-icons/fa";
-import "../globals.css";
+import Link from 'next/link'
+import { FaHeart, FaUser } from 'react-icons/fa'
+import '../globals.css'
+import ProfileIcon from './ProfileIcon'
 
 const NavBar = () => {
   return (
@@ -45,7 +46,7 @@ const NavBar = () => {
         <FaCalendarPlus size={25} /> 
         */}
         <FaHeart size={25} />
-        <FaUser size={25} />
+        <ProfileIcon />
       </div>
     </div>
   );
