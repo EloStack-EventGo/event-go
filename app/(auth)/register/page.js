@@ -1,5 +1,9 @@
 "use client"
 import React,{useState} from "react";
+import Slider from "@/app/components/Slider";
+import sliderData from "@/app/components/SliderData";
+
+
 export default function Register() {
 
 
@@ -34,15 +38,24 @@ export default function Register() {
      
   {/*background image */}
     <main className="bg-crowd bg-cover bg-center bg-no-repeat w-full">   
-      <div className="w-full h-screen flex justify-center items-center bg-black bg-opacity-55">
+      <div className="w-full h-screen flex items-center bg-black bg-opacity-70">
 
         {/** division */}
         {/**left half */}
-        <div className="w-1/3"> <h1>LEFT</h1> </div>
+        {/*<div className="w-1/3"> */}
+        <div className="absolute left-[calc(5%)] w-1/3">
+       {/* <h1>LEFT</h1>*/}
+        <div className="container mx-auto pl-20">
+        <h1 className="text-2xl font-semibold text-center text-white my-9 ml-4">Featured Artists</h1>
+        <Slider slides={ sliderData } />
+             
+        </div> 
+        </div>
+
 
 
         {/**right half */}
-        <div className="absolute left-[calc(40%)] w-[50%] bg-white opacity-65 p-5 text-black rounded-2xl py-12 px-20 flex-1 justify-center text-justify mt-7 mb-2">
+        <div className="absolute left-[calc(45%)] top-[calc(10%)] w-[45%] bg-white opacity-65 p-5 text-black rounded-2xl py-10 px-20 flex-1 justify-center text-justify mt-8 mb-1">
           <p className="text-2xl font-bold mb-2 flex items-center justify-center text-center ">JOIN US TODAY !</p>
           {/* <div className="border-2 w-10 border-black inline-block mb-2"></div>*/}
          {/* <a href='#' className="border-2 border-black rounded-xl bg-white  text-black px-12 py-2 inline-block font-semibold hover:bg-black hover:text-white">SIGN UP</a>*/}
@@ -117,7 +130,7 @@ export default function Register() {
             </div>
 
             {/**social signup */}
-          <div className="flex justify-between mb-4 ">
+          <div className="flex justify-between mb-4 gap-1">
             {/* Google Sign Up Button */}
             <div className="text-center text-sm font-semibold">
               <button type="button" className=" bg-white opacity-95 text-black border-2 border-black-400 py-2 px-4 rounded-xl flex items-center justify-center mb-2">
