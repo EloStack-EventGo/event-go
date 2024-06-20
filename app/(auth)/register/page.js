@@ -46,7 +46,7 @@ export default function Register() {
         <div className="absolute left-[calc(5%)] w-1/3">
        {/* <h1>LEFT</h1>*/}
         <div className="container mx-auto pl-20">
-        <h1 className="text-2xl font-semibold text-center text-white my-9 ml-4">Featured Artists</h1>
+        <h1 className="text-2xl font-semibold text-center text-white my-9 ml-4" > Featured Artists </h1>
         <Slider slides={ sliderData } />
              
         </div> 
