@@ -37,9 +37,27 @@ const NavBar = () => {
             Music{" "}
           </p>
         </Link>
+        <Link href={"/login"}>
+          <p className="font-bold text-white hover:drop-shadow-md text-xl pt-1">
+            {" "}
+            login{" "}
+          </p>
+        </Link>
+        <Link href={"/register"}>
+          <p className="font-bold text-white hover:drop-shadow-md text-xl pt-1">
+            {" "}
+            register{" "}
+          </p>
+        </Link>
       </div>
       <div className="flex flex-row gap-10 pr-5 items-center">
         <p className="font-semibold text-white text-xl pt-1"> SELL </p>
+        <Link href={"/logout"}>
+          <p className="font-bold text-white hover:drop-shadow-md text-xl pt-1">
+            {" "}
+            logout{" "}
+          </p>
+        </Link>
         {/* 
         OPTIONAL ICONS - ("SELL" to sell event, Calendar to add/create event, Heart to view favorites, User to view profile)
         <FaCalendar size={25} />

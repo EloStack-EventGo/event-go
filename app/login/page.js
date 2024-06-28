@@ -1,6 +1,6 @@
 import { FaEnvelope, FaLock} from "react-icons/fa"
 
-export default function login(){
+export default  function login(){
   return (
     <>
   
@@ -23,14 +23,15 @@ export default function login(){
       <div className="py-10"></div>
        <h1 className="absolute top-[calc(26%)] font-bold text-xl mb-8">SIGN IN TO YOUR ACCOUNT</h1>
        <div className="flex flex-col">
+        <form>
         <label className="text-start mt-4 text-sm font-semibold ">Email Address: </label>
           <div className="bg-white w-72 p-1 border-2 border-y-gray mt-2 flex items-center"><FaEnvelope/> 
-          <input type="email" name="email" placeholder="" className="outline-none text-sm m-2 flex-1"></input>
+          <input type="email" name="email" placeholder="you@example.com" className="outline-none text-sm m-2 flex-1"></input>
           </div>
           
         <label className="text-start text-sm mt-2 mb-0 font-semibold">Password: </label>
           <div className="bg-white w-72 p-1 border-2 border-y-gray mt-2 flex items-center"><FaLock/> 
-          <input type="password" name="password" placeholder="" className="outline-none text-sm m-2 flex-1"></input>
+          <input type="password" name="password" placeholder="********" className="outline-none text-sm m-2 flex-1"></input>
           </div>
         
 {/**rember me n forgot password */}
@@ -52,10 +53,10 @@ export default function login(){
 
 <div className=" w-72 mb-5">
           
-          <a href="#" className="font-semibold text-xs mt-5 underline hover:text-gray-500 flex items-start">Don't have an account ?  </a>
+          <a href="/register" className="font-semibold text-xs mt-5 underline hover:text-gray-500 flex items-start">Don't have an account ?  </a>
 
 </div>
-
+</form>
 
 
 

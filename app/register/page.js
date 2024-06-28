@@ -1,12 +1,15 @@
-"use client";
+"use client"
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Slider from "@/app/components/Slider";
 import sliderData from "@/app/components/SliderData";
+//import { useSearchParams } from "next/navigation";
+import RegisterForm from "../components/RegisterForm";
 
-const RegisterForm = dynamic(() => import("@/app/components/RegisterForm"), { ssr: false });
+//const RegisterForm = dynamic(() => import("@/app/components/RegisterForm"), { ssr: false });
 
 export default function Register() {
+ 
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -16,6 +19,7 @@ export default function Register() {
   if (!mounted) {
     return <div>Loading...</div>;
   }
+   
 
   return (
     <>

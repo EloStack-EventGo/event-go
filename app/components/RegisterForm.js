@@ -1,20 +1,82 @@
-"use client";
+//"use server"
+
 import React from "react";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
+import { createClient } from "@/utils/supabase/client";
+import { useRouter } from "next/navigation";
+//import { redirect } from "next/dist/server/api-utils";
+
 
 export default function RegisterForm() {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  /*const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
-    console.log('Form submitted:', data);
+  const signUp = async(formData) => {
+    //console.log('Form submitted:', data);
+   
+    const origin = headers.get('origin')
+    const email=formData.get('email')
+    const name=FormData.get('name')
+    const password=formData.get('password')
+    const confirmPassword=formData.get('confirmPassword')
+
+    const supabase=createClient()
+    const {error} =await supabase.auth.signUp({
+      email,
+      password,
+      options:{
+       emailRedirectTo:`${origin}auth/confirm`
+      }
+    })
+    if (error){
+      redirect('/signup'?message:'email already in use!')
+    }
+    redirect('/confirm'?message:'check email for confirmation mail')
+  };*/
+  const { register, handleSubmit, formState: { errors }, watch } = useForm();
+  const router = useRouter();
+ 
+
+  
+   
+
+  const onSubmit = (formData) => {
+    const { email, name, password, confirmPassword } = formData;
+
+  
+      const supabase = createClient(); // Assuming createClient() sets up Supabase client
+
+     supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          // Redirect URL after confirmation email is sent
+          emailRedirectTo: `${window.location.origin}/auth/confirm`,
+        },
+      })
+      .then(({ error }) => {
+        if (error) {
+          throw error;
+        }
+
+      // Redirect to a page indicating the email has been sent
+      router.push(`/confirm?message=check%20email%20for%20confirmation%20mail`);
+    }) 
+    .catch ((error) => {
+      router.push(`/signup?message=${encodeURIComponent('email already in use!')}`);
+    });
   };
 
+ 
   return (
     <>
     <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md text-sm font-semibold">
       <label htmlFor="email" className="block mb-1">Email:</label>
       <input
+        name="email"
+        placeholder="you@example.com"
         type="email"
+        
         id="email"
         {...register("email", {
           required: "Email is required",
@@ -27,8 +89,10 @@ export default function RegisterForm() {
       />
       {errors.email && <div className="text-red-500">{errors.email.message}</div>}
 
-      <label htmlFor="name" className="block mb-2">Name:</label>
+      <label htmlFor="name" className="block mb-2">Full Name:</label>
       <input
+      name="name"
+      placeholder="First last"
         type="text"
         id="name"
         {...register("name", { required: "Name is required" })}
@@ -38,6 +102,8 @@ export default function RegisterForm() {
 
       <label htmlFor="password" className="block mb-2">Password:</label>
       <input
+        name="password"
+        placeholder="********"
         type="password"
         id="password"
         {...register("password", {
@@ -53,6 +119,8 @@ export default function RegisterForm() {
 
       <label htmlFor="confirmPassword" className="block mb-2">Confirm Password:</label>
       <input
+        name="confirmPassword"
+        placeholder="********"
         type="password"
         id="confirmPassword"
         {...register("confirmPassword", {
@@ -101,10 +169,12 @@ export default function RegisterForm() {
       </button>
     </div>
   </div>
-
+ <Link 
+   href="/register">
   <p className="text-center">
     Already have an account? <a href="#" className="text-blue-400 underline hover:text-black font-semibold">Login</a>
   </p>
+</Link>
 </>
   );
 }
