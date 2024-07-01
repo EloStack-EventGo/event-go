@@ -14,6 +14,19 @@ export const supabaseAdminClient = createClient(SUPA_URL, SUPA_SERVICE_KEY)
 import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
+
+
+export async function GetAccessToken(user_email, user_pass){
+
+    let {data, error} = await supabaseClient.auth.signInWithPassword({email:user_email, password:user_pass})
+    console.log(data, error, " Response recieved");
+
+    try{
+        console.log(data.user.user_metadata.access_token, " access token")
+    }
+    catch(error){}
+}
+
 export async function POST(req){
 
     const url=new URL(req.url);//url builder function
@@ -65,3 +78,7 @@ export async function POST(req){
         status:301
     });
 }
+
+
+//@Cyphinvoided Edit   Example1
+GetAccessToken("random@gmail.com", "random123")
