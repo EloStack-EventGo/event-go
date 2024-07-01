@@ -1,5 +1,15 @@
 //route to call to signup the user
 
+//@Cyphonvoid Edited
+import {createClient}  from '@supabase/supabase-js';
+
+//Specify all the keys here 
+const SUPA_URL = 'https://hhcrpjkcliunjhyvrjna.supabase.co'   //Connects to Cyphonvoid's database you can add your own Database project url here
+const SUPA_SERVICE_KEY = ''  
+const SUPA_ANON_KEY = ''
+export const supabaseClient = createClient(SUPA_URL, SUPA_ANON_KEY)
+export const supabaseAdminClient = createClient(SUPA_URL, SUPA_SERVICE_KEY)
+//@Cyphonvoid Ends
 
 import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
@@ -18,8 +28,11 @@ export async function POST(req){
         return NextResponse.json({ error: 'Email and password are required' }, { status: 400 });
     }*/
 
-    
-
+    //@Cyphonvoid starts
+    let {data, error} = await supabaseClient.auth.signInWithPassword({email:email, password:password})
+    console.log(data, error)
+    //data contains the access_token at data.user.user_metadata.acess_token
+    //@cyphonvoid ends
     //create supabase client and initiate supabase instance
 
     const supabase= createRouteHandlerClient({
