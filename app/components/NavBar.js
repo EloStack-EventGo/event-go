@@ -37,6 +37,12 @@ const NavBar = () => {
             Music{" "}
           </p>
         </Link>
+        <Link href={"/auth/register"}>
+          <p className="font-semibold text-white hover:drop-shadow-md text-xl pt-1">
+            {" "}
+            Register{" "}
+          </p>
+        </Link>
       </div>
       <div className="flex flex-row gap-10 pr-5 items-center">
         <p className="font-semibold text-white text-xl pt-1"> SELL </p>
