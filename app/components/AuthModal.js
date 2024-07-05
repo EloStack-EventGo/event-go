@@ -8,7 +8,7 @@ const AuthModal = ({ isVisible }) => {
         isVisible ? 'block' : 'hidden'
       } tooltip`}
     >
-      <span className="flex flex-row justify-center text-black text-center text-md">
+      <span className="flex flex-row justify-center text-white text-center text-md">
         <Link href={'/register'}>
           <p className="hover:font-bold w-[70px] text-right hover:text-sky-700">
             Register
