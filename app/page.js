@@ -1,9 +1,9 @@
-import { React } from "react";
-import EventCard from "./components/EventCard";
-import NavBar from "./components/NavBar";
-import SearchBar from "./components/SearchBar";
-import TopPicks from "./top-picks/page";
-import Background from "./components/Background";
+import { React } from 'react'
+import EventCard from './components/EventCard'
+import NavBar from './components/NavBar'
+import SearchBar from './components/SearchBar'
+import TopPicks from './top-picks/page'
+import Background from './components/Background'
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
         </h1>
         <TopPicks />
       </div>
-      <Background />
+      <Background className="top-[-500px] bg-concert h-[1350px] mb-[-300px]" />
     </main>
-  );
+  )
 }
